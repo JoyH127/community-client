@@ -10,3 +10,16 @@
   width: 600px;
   border-radius: 3px;
 }
+
+.createPost {
+  border: 1px solid #000;
+  width: 600px;
+  height: 100px;
+  border-radius: 3px;
+  text-align: center;
+  line-height: 100px;
+  margin: 0 auto;
+}
+.createPost input {
+  margin: 5px;
+}

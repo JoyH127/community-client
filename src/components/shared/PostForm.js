@@ -1,39 +1,24 @@
-import { useState, useEffect } from "react";
-import { NavLink } from "react-router-dom";
-import axios from "axios";
-import apiUrl from "../../apiConfig";
-
-function Posts() {
-  const [items, setItems] = useState([]);
-
-  const fetchData = async () => {
-    try {
-      const response = await axios(`${apiUrl}/items`);
-      // console.log(response)
-      setItems(response.data.items);
-    } catch (error) {
-      console.log(error);
-    }
-  };
-
-  useEffect(() => {
-    fetchData();
-  }, []);
-
-  const itemsData = items.map((item, index) => {
-    return (
-      <li key={item._id}>
-        <NavLink to={`/items/${item._id}`}>{item.title}</NavLink>
-      </li>
-    );
-  });
-
+// it s gonna take object
+const PostForm = ({ post, handleSubmit, handleChange }) => {
   return (
-    <div>
-      <h4>Items</h4>
-      <ul>{itemsData}</ul>
-    </div>
+    <form onSubmit={handleSubmit}>
+      <lable>Title</lable>
+      <input
+        placeholder="title"
+        defaultValue={post.Post_title}
+        name="title"
+        onChange={(e) => handleChange(e)}
+      />
+      <input
+        placeholder="Content.."
+        defaultValue={post.Post_content}
+        name="content"
+        onChange={(e) => handleChange(e)}
+      />
+      <button type="submit">Post</button>
+    </form>
   );
-}
+};
+//defaultValue => you won't be able to type.
 
-export default Posts;
+export default PostForm;
