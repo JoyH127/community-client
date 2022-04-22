@@ -1,19 +1,11 @@
 import { useState, useEffect } from "react";
-import { NavLink } from "react-router-dom";
-import { useNavigate } from "react-router-dom";
 import axios from "axios";
 import apiUrl from "../../apiConfig";
 import PostCard from "./PostCard";
-import PostForm from "../shared/PostForm";
-function Posts() {
-  const navigate = useNavigate();
+import PostCreate from "./PostCreate";
+function Posts({ get }) {
   const [posts, setPosts] = useState([]);
-  const [post, setPost] = useState({
-    FK_User_id: 100,
-    Post_title: "hm",
-    Post_content: "dummy post",
-  });
-  const [createdPost, setCreatedPost] = useState(null);
+
   const fetchData = async () => {
     try {
       const response = await axios(`${apiUrl}/posts`);
@@ -27,40 +19,20 @@ function Posts() {
   }, []);
 
   console.log(posts);
-  const handleSubmit = (event) => {
-    event.preventDefault();
-    // if the entry is created in the database, save the response data
-    // in the state.
-    axios({
-      url: `${apiUrl}/posts`,
-      method: "POST",
-      data: post,
-    }).then((res) => {
-      setCreatedPost(res.data.post).catch(console.error);
-      console.log("post", post);
-    });
-  };
-
-  const handleChange = (event) => {
-    const updatedField = { [event.target.name]: event.target.value };
-    // created a placeholder grabbing the value from the user input form
-    const editedItem = Object.assign(post, updatedField);
-    // assigned the empty state with the updatedField into one object
-    setPost(editedItem);
-    // assigned the new object to be updated to the state
-  };
-
-  useEffect(() => {
-    if (createdPost) {
-      return navigate(`/posts`);
-    }
-  }, [createdPost, navigate]);
-
+  get(posts);
   const postsData = posts.map((post, index) => {
-    const { Post_Created_at, Post_title, Post_content, Post_img, likes } = post;
+    const {
+      Post_id,
+      Post_Created_at,
+      Post_title,
+      Post_content,
+      Post_img,
+      likes,
+    } = post;
     return (
       <div>
         <PostCard
+          Post_id={Post_id}
           Post_Created_at={Post_Created_at}
           Post_title={Post_title}
           Post_content={Post_content}
@@ -74,13 +46,12 @@ function Posts() {
   return (
     <div>
       <section className="createPost">
-        <PostForm
-          post={post}
-          handleSubmit={(e) => handleSubmit(e)}
-          handleChange={(e) => handleChange(e)}
-        />
+        <PostCreate posts={posts} setPosts={setPosts} />
       </section>
-      <div className="posts">{postsData}</div>
+
+      <section className="postContainer">
+        <div className="posts">{postsData}</div>
+      </section>
     </div>
   );
 }
