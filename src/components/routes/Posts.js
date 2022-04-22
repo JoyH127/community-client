@@ -8,7 +8,11 @@ import PostForm from "../shared/PostForm";
 function Posts() {
   const navigate = useNavigate();
   const [posts, setPosts] = useState([]);
-  const [post, setPost] = useState([]);
+  const [post, setPost] = useState({
+    FK_User_id: 100,
+    Post_title: "hm",
+    Post_content: "dummy post",
+  });
   const [createdPost, setCreatedPost] = useState(null);
   const fetchData = async () => {
     try {
@@ -32,7 +36,7 @@ function Posts() {
       method: "POST",
       data: post,
     }).then((res) => {
-      setCreatedPost(res.data).catch(console.error);
+      setCreatedPost(res.data.post).catch(console.error);
       console.log("post", post);
     });
   };

@@ -2,7 +2,7 @@
 const PostForm = ({ post, handleSubmit, handleChange }) => {
   return (
     <form onSubmit={handleSubmit}>
-      <lable>Title</lable>
+      <input placeholder="user" defaultValue={84} />
       <input
         placeholder="title"
         defaultValue={post.Post_title}
