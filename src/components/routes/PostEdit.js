@@ -8,23 +8,22 @@ export default function PostEdit(props) {
   //should fix this part
 
   const Submit = (data) => {
-    console.log(data); // {Post_content...,}
-    updatePost(data);
+    //need to switch FK_User_id value into into
+    const updateData = {
+      FK_User_id: parseInt(data.FK_User_id),
+      Post_title: data.Post_title,
+      Post_content: data.Post_content,
+      Post_id: props.Post_id,
+    };
+
+    console.log(updateData);
+    UpdatePost(updateData);
   };
-  const updatePost = (data) => {
-    axios.put(`${apiUrl}/posts`, data).then((res) => {
-      props.setPosts(
-        props.posts.map((post) => {
-          return post.id === props.id
-            ? {
-                Post_id: 104,
-                FK_User_id: 100,
-                Post_title: post.Post_title,
-                Post_content: post.Post_content,
-              }
-            : post;
-        })
-      );
+
+  // 2.
+  const UpdatePost = (updateData) => {
+    axios.put(`${apiUrl}/posts/${props.Post_id}`, updateData).then(() => {
+      props.setPosts([props, { updateData }]);
     });
   };
 

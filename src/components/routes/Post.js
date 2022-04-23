@@ -5,12 +5,14 @@ import apiUrl from "../../apiConfig";
 import React from "react";
 import CommentCreate from "./CommentCreate";
 import PostEdit from "./PostEdit";
+import PostDelete from "./PostDelete";
 export default function Post() {
   const [posts, setPosts] = useState([]);
   const [comments, setComments] = useState([]);
   const [user, setUser] = useState([]);
   const [isOpen, setIsOpen] = useState(false);
   const [edit, setEdit] = useState(false);
+
   const fetchUser = async () => {
     try {
       const response = await axios.get(`${apiUrl}/users`);
@@ -41,6 +43,9 @@ export default function Post() {
     }
   };
   //   console.log("comment", comments);
+
+  // Get info only targeted post by id
+  // toggle the content to see comment
   const renderCommment = () => {
     return comments.map((com, index) => {
       const { FK_Commenter_id, FK_Post_id, Comment, Comment_Created_at } = com;
@@ -71,6 +76,7 @@ export default function Post() {
   const render = () => {
     return posts.map((post, index) => {
       const {
+        FK_User_id,
         Post_Created_at,
         Post_title,
         Post_content,
@@ -88,10 +94,12 @@ export default function Post() {
                 <button className="Edit" onClick={() => setEdit(!edit)}>
                   Edit
                 </button>
+                <PostDelete Post_id={Post_id} setPosts={setPosts} />
               </div>
               {edit ? (
                 <>
                   <PostEdit
+                    FK_User_id={FK_User_id}
                     Post_Created_at={Post_Created_at}
                     Post_title={Post_title}
                     Post_content={Post_content}
