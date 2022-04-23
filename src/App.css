@@ -1,3 +1,15 @@
+nav {
+  border: 1px solid #000;
+  text-align: center;
+  padding: 10px;
+  font-size: 20px;
+}
+
+nav a {
+  padding: 20px;
+  text-decoration: none;
+  color: #000;
+}
 .createPost {
   border: 1px solid #000;
   width: 600px;
@@ -55,16 +67,52 @@
 }
 
 .input-user input {
-  width: 70px;
-  margin-right: 10px;
+  display: none;
 }
 
 .input-title input {
-  width: 235px;
+  width: 300px;
 }
 
 .input-top {
   border: 1px solid #000;
   width: 400px;
   margin: 0 auto;
+}
+
+/* ----------------- POST PAGE */
+.post-post {
+  margin: 30px 0 30px 0;
+  display: flex;
+  width: 600px;
+  flex-direction: column;
+  align-items: center;
+  border: 1px solid #000;
+  border-radius: 1%;
+}
+
+.post-container {
+  display: flex;
+  justify-content: center;
+  border: 1px solid #000;
+}
+
+.openComment {
+  background-color: white;
+  cursor: pointer;
+  width: 100%;
+}
+.comment-content {
+  height: 0;
+  transition: height ease 0.3s;
+}
+
+.comment-content.show {
+  height: 100%;
+}
+
+/* post- comment */
+
+.input-post {
+  display: none;
 }

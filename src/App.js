@@ -4,12 +4,13 @@ import Home from "./components/routes/Home";
 import Posts from "./components/routes/Posts";
 import Post from "./components/routes/Post";
 import { useState } from "react";
+
 function App() {
-  const [postsData, setPosts] = useState([]);
-  const get = (postsData) => {
-    setPosts(postsData);
-  };
-  console.log("getting data", postsData);
+  // const [postsData, setPosts] = useState([]);
+  // const get = (postsData) => {
+  //   setPosts(postsData);
+  // };
+  // console.log("getting data", postsData);
   return (
     <div className="App">
       <nav>
@@ -18,8 +19,8 @@ function App() {
       </nav>
       <Routes>
         <Route path="/" element={<Home />} />
-        <Route path="/posts" element={<Posts get={get} />} />
-        <Route path="/posts/:id" element={<Post {...postsData} />} />
+        <Route path="/posts" element={<Posts />} />
+        <Route path="/posts/:id" element={<Post />} />
       </Routes>
     </div>
   );

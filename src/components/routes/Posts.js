@@ -3,7 +3,7 @@ import axios from "axios";
 import apiUrl from "../../apiConfig";
 import PostCard from "./PostCard";
 import PostCreate from "./PostCreate";
-function Posts({ get }) {
+function Posts() {
   const [posts, setPosts] = useState([]);
 
   const fetchData = async () => {
@@ -14,14 +14,17 @@ function Posts({ get }) {
       console.log(error);
     }
   };
+
   useEffect(() => {
     fetchData();
   }, []);
 
-  console.log(posts);
-  get(posts);
+  console.log("posts", posts);
+
+  // get(posts);
   const postsData = posts.map((post, index) => {
     const {
+      FK_User_id,
       Post_id,
       Post_Created_at,
       Post_title,
@@ -32,6 +35,7 @@ function Posts({ get }) {
     return (
       <div>
         <PostCard
+          FK_User_id={FK_User_id}
           Post_id={Post_id}
           Post_Created_at={Post_Created_at}
           Post_title={Post_title}

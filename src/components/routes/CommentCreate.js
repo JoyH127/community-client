@@ -1,7 +1,7 @@
 import { useForm } from "react-hook-form";
 import axios from "axios";
 import apiUrl from "../../apiConfig";
-export default function PostCreate(props) {
+export default function CommentCreate({ comments, setComments, id }) {
   const { register, handleSubmit } = useForm();
   const Submit = (data) => {
     console.log(data);
@@ -10,8 +10,8 @@ export default function PostCreate(props) {
 
   // 2.
   const addPost = (data) => {
-    axios.post(`${apiUrl}/posts`, data).then(() => {
-      props.setPosts([...props.posts, { data }]);
+    axios.post(`${apiUrl}/comments`, data).then(() => {
+      setComments([...comments, { data }]);
     });
   };
 
@@ -22,18 +22,22 @@ export default function PostCreate(props) {
           <input
             placeholder="user"
             defaultValue={100}
-            {...register("FK_User_id")}
+            {...register("FK_Commenter_id")}
+          />
+        </span>
+        <span className="input-post">
+          <input
+            placeholder="Post"
+            defaultValue={id}
+            {...register("FK_Post_id")}
           />
         </span>
       </div>
       <div className="input-content">
-        <span className="input-title">
-          <input placeholder="title" name="title" {...register("Post_title")} />
-        </span>
         <input
           placeholder="Content.."
           name="content"
-          {...register("Post_content")}
+          {...register("Comment")}
         />
         <button type="submit">Post</button>
       </div>
