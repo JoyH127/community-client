@@ -3,8 +3,10 @@ import apiUrl from "../../apiConfig";
 import { useForm } from "react-hook-form";
 export default function CommentEdit(props) {
   const { register, handleSubmit } = useForm();
+
+  // getting data from form.
   const Submit = (data) => {
-    //need to switch FK_User_id value into into
+    //need to switch FK_User_id value into, so reshape input data for database.
     const CommentData = {
       Comment_id: props.Comment_id,
       FK_Commenter_id: props.FK_Commenter_id,
@@ -15,12 +17,12 @@ export default function CommentEdit(props) {
     UpdateComment(CommentData);
   };
 
-  // 2.
   const UpdateComment = (CommentData) => {
     axios
       .put(`${apiUrl}/comments/${props.Comment_id}`, CommentData)
       .then(() => {
         props.setComments([props, { CommentData }]);
+        window.location.reload();
       });
   };
 

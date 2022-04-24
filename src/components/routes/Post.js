@@ -7,6 +7,8 @@ import CommentCreate from "./CommentCreate";
 import PostEdit from "./PostEdit";
 import PostDelete from "./PostDelete";
 import CommentEdit from "./CommentEdit";
+import CommentDelete from "./CommentDelete";
+
 export default function Post() {
   //get posts for render.
   const [posts, setPosts] = useState([]);
@@ -82,6 +84,11 @@ export default function Post() {
                   >
                     Edit
                   </button>
+                  <CommentDelete
+                    Comment_id={Comment_id}
+                    setComments={setComments}
+                    FK_Post_id={FK_Post_id}
+                  />
                   {editCom == true && comID == Comment_id ? (
                     <>
                       <CommentEdit

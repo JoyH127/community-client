@@ -12,6 +12,7 @@ export default function CommentCreate({ comments, setComments, id }) {
   const addPost = (data) => {
     axios.post(`${apiUrl}/comments`, data).then(() => {
       setComments([...comments, { data }]);
+      window.location.reload();
     });
   };
 

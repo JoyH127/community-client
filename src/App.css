@@ -1,3 +1,17 @@
+body {
+  animation: fadeInAnimation ease 2s;
+  animation-iteration-count: 1;
+  animation-fill-mode: backwards;
+}
+@keyframes fadeInAnimation {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
 nav {
   border: 1px solid #000;
   text-align: center;
@@ -34,11 +48,17 @@ nav a {
   align-items: center;
   border: 1px solid #000;
   border-radius: 1%;
+  animation: fadeInAnimation ease 1s;
+  animation-iteration-count: 1;
+  animation-fill-mode: backwards;
 }
 
 .post {
   border-bottom: 1px solid #000;
   width: 600px;
+  animation: fadeInAnimation ease 2s;
+  animation-iteration-count: 1;
+  animation-fill-mode: backwards;
 
   display: flex;
   flex-direction: column;
@@ -105,10 +125,16 @@ nav a {
 .comment-content {
   height: 0;
   transition: height ease 0.3s;
+  animation: fadeInAnimation ease 2s;
+  animation-iteration-count: 1;
+  animation-fill-mode: backwards;
 }
 
 .comment-content.show {
   height: 100%;
+  animation: fadeInAnimation ease 2s;
+  animation-iteration-count: 1;
+  animation-fill-mode: backwards;
 }
 
 /* post- comment */
