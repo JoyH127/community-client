@@ -6,13 +6,15 @@ import React from "react";
 import CommentCreate from "./CommentCreate";
 import PostEdit from "./PostEdit";
 import PostDelete from "./PostDelete";
+import CommentEdit from "./CommentEdit";
 export default function Post() {
   const [posts, setPosts] = useState([]);
   const [comments, setComments] = useState([]);
   const [user, setUser] = useState([]);
   const [isOpen, setIsOpen] = useState(false);
   const [edit, setEdit] = useState(false);
-
+  //for comment
+  const [editCom, setEditCom] = useState(false);
   const fetchUser = async () => {
     try {
       const response = await axios.get(`${apiUrl}/users`);
@@ -48,7 +50,17 @@ export default function Post() {
   // toggle the content to see comment
   const renderCommment = () => {
     return comments.map((com, index) => {
-      const { FK_Commenter_id, FK_Post_id, Comment, Comment_Created_at } = com;
+      const {
+        Comment_id,
+        FK_Commenter_id,
+        FK_Post_id,
+        Comment,
+        Comment_Created_at,
+      } = com;
+      const getID = () => {
+        const comNum = Comment_id;
+        return comNum;
+      };
       return (
         <div>
           {id == FK_Post_id ? (
@@ -59,9 +71,33 @@ export default function Post() {
                     isOpen ? "comment-content show" : "comment-content"
                   }
                 >
-                  <p>{FK_Commenter_id}</p>
-                  <p>{Comment}</p>
-                  <p>{Comment_Created_at}</p>
+                  <button
+                    className="EditComment"
+                    onClick={() => {
+                      setEditCom(!editCom);
+                      getID();
+                    }}
+                  >
+                    Edit
+                  </button>
+                  {editCom == true ? (
+                    <>
+                      <CommentEdit
+                        Comment_id={Comment_id}
+                        FK_Commenter_id={FK_Commenter_id}
+                        FK_Post_id={FK_Post_id}
+                        Comment={Comment}
+                        Comment_Created_at={Comment_Created_at}
+                        setComments={setComments}
+                      />
+                    </>
+                  ) : (
+                    <div>
+                      <p>{FK_Commenter_id}</p>
+                      <p>{Comment}</p>
+                      <p>{Comment_Created_at}</p>
+                    </div>
+                  )}
                 </div>
               )}
             </div>
