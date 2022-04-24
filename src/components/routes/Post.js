@@ -8,13 +8,18 @@ import PostEdit from "./PostEdit";
 import PostDelete from "./PostDelete";
 import CommentEdit from "./CommentEdit";
 export default function Post() {
+  //get posts for render.
   const [posts, setPosts] = useState([]);
   const [comments, setComments] = useState([]);
   const [user, setUser] = useState([]);
+  //toggle the comment page
   const [isOpen, setIsOpen] = useState(false);
   const [edit, setEdit] = useState(false);
   //for comment
   const [editCom, setEditCom] = useState(false);
+  //to get comID and set the change, to separate the button.
+  const [comID, setComID] = useState(0);
+
   const fetchUser = async () => {
     try {
       const response = await axios.get(`${apiUrl}/users`);
@@ -57,10 +62,7 @@ export default function Post() {
         Comment,
         Comment_Created_at,
       } = com;
-      const getID = () => {
-        const comNum = Comment_id;
-        return comNum;
-      };
+
       return (
         <div>
           {id == FK_Post_id ? (
@@ -75,12 +77,12 @@ export default function Post() {
                     className="EditComment"
                     onClick={() => {
                       setEditCom(!editCom);
-                      getID();
+                      setComID(Comment_id);
                     }}
                   >
                     Edit
                   </button>
-                  {editCom == true ? (
+                  {editCom == true && comID == Comment_id ? (
                     <>
                       <CommentEdit
                         Comment_id={Comment_id}
