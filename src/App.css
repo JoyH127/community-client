@@ -142,3 +142,56 @@ nav a {
 .input-post {
   display: none;
 }
+
+/* Home ---------------- */
+
+/* Slideshow */
+
+.slideshow {
+  margin: 0 auto;
+  overflow: hidden;
+  max-width: 350px;
+  border-radius: 10px;
+}
+.slideshow img {
+  height: 100%;
+  position: absolute;
+  right: -170px;
+}
+
+.slideshowSlider {
+  white-space: nowrap;
+  transition: ease 1000ms;
+}
+
+.slide {
+  position: relative;
+  display: inline-block;
+  overflow: hidden;
+  height: 400px;
+  width: 100%;
+  border-radius: 10px;
+  background-color: antiquewhite;
+}
+
+/* Buttons */
+
+.slideshowDots {
+  text-align: center;
+}
+
+.slideshowDot {
+  display: inline-block;
+  height: 10px;
+  width: 10px;
+  border-radius: 50%;
+
+  cursor: pointer;
+  margin: 15px 7px 0px;
+
+  background-color: #c4c4c4;
+}
+
+.slideshowDot.active {
+  background-color: #260000;
+}

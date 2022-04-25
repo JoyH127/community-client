@@ -3,7 +3,9 @@ import "./App.css";
 import Home from "./components/routes/Home";
 import Posts from "./components/routes/Posts";
 import Post from "./components/routes/Post";
+import Login from "./components/shared/Login";
 import { useState } from "react";
+import Register from "./components/shared/Register";
 
 function App() {
   // const [postsData, setPosts] = useState([]);
@@ -19,6 +21,8 @@ function App() {
       </nav>
       <Routes>
         <Route path="/" element={<Home />} />
+        <Route path="/login" element={<Login />} />
+        <Route path="/register" element={<Register />} />
         <Route path="/posts" element={<Posts />} />
         <Route path="/posts/:id" element={<Post />} />
       </Routes>
