@@ -3,7 +3,7 @@ import axios from "axios";
 import apiUrl from "../../apiConfig";
 import chain from "../img/gif/chain.gif";
 import education from "../img/gif/education.gif";
-// import squid from "../img/gif/squid.gif";
+
 import rock from "../img/gif/rock.gif";
 export default function Home() {
   const colors = ["#0088FE", "#00C49F", "#FFBB28"];
