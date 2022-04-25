@@ -11,6 +11,12 @@ body {
     opacity: 1;
   }
 }
+.nav-login {
+  border: 1px solid #000;
+  text-align: right;
+  padding: 10px;
+  font-size: 15px;
+}
 
 nav {
   border: 1px solid #000;
@@ -194,4 +200,31 @@ nav a {
 
 .slideshowDot.active {
   background-color: #260000;
+}
+
+/* -------------------------Login Page */
+.Login {
+  padding: 40px;
+  border: 1px solid #000;
+}
+
+.Login-contain {
+  margin: 0 auto;
+  display: flex;
+  justify-content: center;
+  width: 80%;
+  border: 1px solid #000;
+}
+
+.Register {
+  padding: 40px;
+  border: 1px solid #000;
+}
+
+.Reg-contain {
+  margin: 0 auto;
+  display: flex;
+  justify-content: center;
+  width: 80%;
+  border: 1px solid #000;
 }

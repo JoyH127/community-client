@@ -2,8 +2,7 @@ import { NavLink } from "react-router-dom";
 
 export default function Login() {
   return (
-    <>
-      {" "}
+    <div className="Login-contain">
       <div className="Login">
         <h1>Login</h1>
         <form action="/login" method="POST">
@@ -27,8 +26,8 @@ export default function Login() {
           </div>
           <button type="submist">Login</button>
         </form>
-        <NavLink to={"/Register"}> Register </NavLink>
+        <NavLink to={"/Register"}>You don't have account? </NavLink>
       </div>
-    </>
+    </div>
   );
 }

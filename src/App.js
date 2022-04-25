@@ -15,14 +15,18 @@ function App() {
   // console.log("getting data", postsData);
   return (
     <div className="App">
+      <nav className="nav-login">
+        <NavLink to={"/Login"}>Login</NavLink>
+        <a>Logout</a>
+      </nav>
       <nav>
         <NavLink to={"/"}>Main</NavLink>
         <NavLink to={"/posts"}>Thread</NavLink>
       </nav>
       <Routes>
         <Route path="/" element={<Home />} />
-        <Route path="/login" element={<Login />} />
-        <Route path="/register" element={<Register />} />
+        <Route path="/Login" element={<Login />} />
+        <Route path="/Register" element={<Register />} />
         <Route path="/posts" element={<Posts />} />
         <Route path="/posts/:id" element={<Post />} />
       </Routes>
