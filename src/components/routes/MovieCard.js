@@ -42,7 +42,7 @@ export default function MovieCard({
               <div className="popup-text">
                 <h2>{title}</h2>
                 <h4> {release_date}</h4>
-                <hr></hr>
+                <hr />
                 <p>
                   <h3>Overview</h3>
                   {overview}
