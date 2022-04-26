@@ -6,12 +6,10 @@ import MovieCard from "./MovieCard";
 import React from "react";
 import left from "../img/icon/next.png";
 import right from "../img/icon/right.png";
-import Trend from "./Trend";
-import { useParams } from "react-router-dom";
+
 const URL = "https://api.themoviedb.org/3/trending/movie/week?api_key=";
 const API_KEY = "364efc32f3d781a4ef5b975d2e25f1f7";
 export default function Home() {
-  const id = useParams();
   // const [popup, setPopup] = useState(true);
   const [trends, setTrend] = useState([]);
 
@@ -38,9 +36,6 @@ export default function Home() {
     slide.scrollLeft = slide.scrollLeft - 700;
   };
 
-  // const handlePopup = () => {
-  //   setPopup(!popup);
-  // };
   console.log("trend", trends);
   const renderTrend = () => {
     return trends.map((trend, index) => {
@@ -94,9 +89,9 @@ export default function Home() {
   return (
     <div>
       <Slider />
-      <section>
-        <h2>Weekly Movie Trend</h2>
+      <section className="trend-section">
         <div className="main-slider">
+          <h2>Weekly Movie Trend</h2>
           <img className="left" src={left} onClick={slideLeft} />
           <div className="trend-container">{renderTrend()}</div>
           <img className="right" src={right} onClick={slideRight} />

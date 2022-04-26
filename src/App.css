@@ -1,8 +1,11 @@
+* {
+  color: white;
+}
 body {
   animation: fadeInAnimation ease 2s;
   animation-iteration-count: 1;
   animation-fill-mode: backwards;
-  background-color: #260000;
+  background-color: rgb(24, 24, 24);
 }
 @keyframes fadeInAnimation {
   0% {
@@ -13,14 +16,14 @@ body {
   }
 }
 .nav-login {
-  border: 1px solid #000;
+  border: 1px solid rgb(255, 255, 255);
   text-align: right;
   padding: 10px;
   font-size: 15px;
 }
 
 nav {
-  border: 1px solid #000;
+  border: 1px solid rgb(255, 255, 255);
   text-align: center;
   padding: 10px;
   font-size: 20px;
@@ -29,10 +32,10 @@ nav {
 nav a {
   padding: 20px;
   text-decoration: none;
-  color: #000;
+  color: rgb(255, 255, 255);
 }
 .createPost {
-  border: 1px solid #000;
+  border: 1px solid rgb(255, 255, 255);
   width: 600px;
   height: 100%;
   border-radius: 3px;
@@ -53,7 +56,7 @@ nav a {
   width: 600px;
   flex-direction: column;
   align-items: center;
-  border: 1px solid #000;
+  border: 1px solid rgb(255, 255, 255);
   border-radius: 1%;
   animation: fadeInAnimation ease 1s;
   animation-iteration-count: 1;
@@ -61,7 +64,7 @@ nav a {
 }
 
 .post {
-  border-bottom: 1px solid #000;
+  border-bottom: 1px solid rgb(255, 255, 255);
   width: 600px;
   animation: fadeInAnimation ease 2s;
   animation-iteration-count: 1;
@@ -79,11 +82,11 @@ nav a {
   justify-content: right;
 }
 .Cardtop p {
-  border: 1px solid #000;
+  border: 1px solid rgb(255, 255, 255);
   padding: 0 20px 0 20px;
 }
 .input-content {
-  border: 1px solid #000;
+  border: 1px solid rgb(255, 255, 255);
   width: 400px;
   margin: 0 auto;
 }
@@ -102,7 +105,7 @@ nav a {
 }
 
 .input-top {
-  border: 1px solid #000;
+  border: 1px solid rgb(255, 255, 255);
   width: 400px;
   margin: 0 auto;
 }
@@ -114,17 +117,18 @@ nav a {
   width: 600px;
   flex-direction: column;
   align-items: center;
-  border: 1px solid #000;
+  border: 1px solid rgb(255, 255, 255);
   border-radius: 1%;
 }
 
 .post-container {
   display: flex;
   justify-content: center;
-  border: 1px solid #000;
+  border: 1px solid rgb(255, 255, 255);
 }
 
 .openComment {
+  border: 1px solid rgb(247, 244, 244);
   background-color: white;
   cursor: pointer;
   width: 100%;
@@ -153,17 +157,39 @@ nav a {
 /* Home ---------------- */
 
 /* Slideshow */
-
+.whole-slide-container {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  border: 1px solid rgb(255, 0, 0);
+}
 .slideshow {
+  position: relative;
   margin: 0 auto;
   overflow: hidden;
-  max-width: 700px;
+  width: 700px;
   border-radius: 10px;
 }
 .slideshow img {
   height: 100%;
   position: absolute;
   right: -10px;
+}
+.main-slide-banner {
+  position: relative;
+  border: 1px solid rgb(27, 179, 206);
+  height: 400px;
+  width: 700px;
+}
+
+.slider-covers {
+  position: absolute;
+  z-index: 10;
+  display: flex;
+  justify-content: center;
+  height: 400px;
+  width: 700px;
+  border: 1px solid rgb(255, 255, 255);
 }
 
 .slideshowSlider {
@@ -181,6 +207,34 @@ nav a {
   background-color: antiquewhite;
 }
 
+.info-icon {
+  position: absolute;
+  z-index: 30;
+  height: 30px;
+  width: 30px;
+  filter: invert(1);
+  right: 30px;
+  top: 20px;
+}
+
+.plus-icon {
+  position: absolute;
+  z-index: 30;
+  height: 30px;
+  width: 30px;
+  filter: invert(1);
+  right: 30px;
+  bottom: 80px;
+}
+.send-icon {
+  position: absolute;
+  z-index: 30;
+  height: 30px;
+  width: 30px;
+  filter: invert(1);
+  right: 30px;
+  bottom: 35px;
+}
 /* Buttons */
 
 .slideshowDots {
@@ -200,13 +254,13 @@ nav a {
 }
 
 .slideshowDot.active {
-  background-color: #260000;
+  background-color: #670000;
 }
 
 /* -------------------------Login Page */
 .Login {
   padding: 40px;
-  border: 1px solid #000;
+  border: 1px solid rgb(255, 255, 255);
 }
 
 .Login-contain {
@@ -214,12 +268,12 @@ nav a {
   display: flex;
   justify-content: center;
   width: 80%;
-  border: 1px solid #000;
+  border: 1px solid rgb(255, 255, 255);
 }
 
 .Register {
   padding: 40px;
-  border: 1px solid #000;
+  border: 1px solid rgb(255, 255, 255);
 }
 
 .Reg-contain {
@@ -227,33 +281,35 @@ nav a {
   display: flex;
   justify-content: center;
   width: 80%;
-  border: 1px solid #000;
+  border: 1px solid rgb(255, 255, 255);
 }
 
-/* Movie Slider */
-
+/* ------------------- Movie Slider */
+.trend-section {
+  text-align: center;
+}
 .card {
   margin: 0 auto;
   margin-left: 20px;
   padding-bottom: 0px;
   border-radius: 10px;
-  border: 1px solid #000;
+  border: 1px solid rgb(255, 255, 255);
   text-align: center;
 }
 .card:hover {
+  position: relative;
   background-color: rgba(252, 252, 252, 0.782);
   margin: 0 auto;
   margin-left: 20px;
   padding-bottom: 20px;
   border-radius: 10px;
   transition: 0.5s;
+  scale: 1.05;
 }
 .trend-container {
   display: flex;
   width: 1100px;
   margin: 0 auto;
-  /* flex-wrap: wrap;
-    flex-direction: row; */
   overflow-x: scroll;
   scrollbar-width: none;
   scroll-behavior: smooth;
@@ -264,20 +320,22 @@ nav a {
   position: relative;
   margin-bottom: 45px;
   transition: 0.5s;
+  padding-top: 50px;
 }
 .left,
 .right {
   position: absolute;
   z-index: 4px;
   width: 30px;
+  filter: invert(1);
 }
 .left {
   left: 150px;
-  top: 170px;
+  top: 50%;
 }
 .right {
   right: 140px;
-  top: 170px;
+  top: 50%;
 }
 
 .card img {
@@ -294,8 +352,7 @@ nav a {
 }
 
 .card h2 {
-  color: #000;
-  border: 1px solid #000;
+  border: 1px solid rgb(255, 255, 255);
 }
 /* ---------------------TREND POPUP */
 .popup {
@@ -304,7 +361,7 @@ nav a {
   left: 0;
   width: 100%;
 
-  background-color: rgba(0, 0, 0, 0.641);
+  background-color: rgba(0, 0, 0, 0.539);
   display: flex;
   justify-content: center;
   align-items: center;
@@ -317,7 +374,7 @@ nav a {
   width: 100%;
   max-width: 1000px;
   height: 100%;
-  background-color: white;
+  background-color: rgb(31, 31, 31);
 }
 .popup-inner img {
   height: 100%;
