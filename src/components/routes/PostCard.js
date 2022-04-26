@@ -2,6 +2,7 @@ import { useNavigate } from "react-router-dom";
 import { useState, useEffect } from "react";
 import axios from "axios";
 import apiUrl from "../../apiConfig";
+import like from "../img/icon/heart.png";
 function PostCard({
   FK_User_id,
   Post_Created_at,
@@ -36,7 +37,10 @@ function PostCard({
       <div className="post" onClick={() => navigate(`${Post_id}`)}>
         <div className="Cardtop">
           <p>{Post_Created_at}</p>
-          <p>{likes == null ? 0 : likes}</p>
+          <p>
+            <img className="like" src={like}></img>
+            {likes == null ? 0 : likes}
+          </p>
         </div>
         <div className="postContent">
           <div>{getUser}</div>

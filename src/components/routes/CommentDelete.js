@@ -1,6 +1,7 @@
 import axios from "axios";
 import apiUrl from "../../apiConfig";
 import { useNavigate } from "react-router-dom";
+import deleteIcon from "../img/icon/trash.png";
 export default function CommentDelete(props) {
   const navigate = useNavigate();
   const deleteComment = () => {
@@ -12,15 +13,16 @@ export default function CommentDelete(props) {
   };
 
   return (
-    <button
-      className="del-btn"
-      onClick={() => {
-        deleteComment();
-        navigate(`/posts/${props.FK_Post_id}`);
-      }}
-    >
-      Delete
-    </button>
+    <div className="comment-delete">
+      <img
+        src={deleteIcon}
+        className="del-icon-comment"
+        onClick={() => {
+          deleteComment();
+          navigate(`/posts/${props.FK_Post_id}`);
+        }}
+      ></img>
+    </div>
   );
 }
 

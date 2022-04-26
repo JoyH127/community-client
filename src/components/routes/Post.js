@@ -8,7 +8,9 @@ import PostEdit from "./PostEdit";
 import PostDelete from "./PostDelete";
 import CommentEdit from "./CommentEdit";
 import CommentDelete from "./CommentDelete";
-
+import like from "../img/icon/heart.png";
+import editIcon from "../img/icon/pencil.png";
+import more from "../img/icon/down.png";
 export default function Post() {
   //get posts for render.
   const [posts, setPosts] = useState([]);
@@ -68,22 +70,22 @@ export default function Post() {
       return (
         <div>
           {id == FK_Post_id ? (
-            <div className="post">
+            <div className="comment">
               {isOpen && (
                 <div
                   className={
                     isOpen ? "comment-content show" : "comment-content"
                   }
                 >
-                  <button
-                    className="EditComment"
+                  <img
+                    src={editIcon}
+                    className="edit-icon-comment"
                     onClick={() => {
                       setEditCom(!editCom);
                       setComID(Comment_id);
                     }}
-                  >
-                    Edit
-                  </button>
+                  ></img>
+
                   <CommentDelete
                     Comment_id={Comment_id}
                     setComments={setComments}
@@ -102,9 +104,11 @@ export default function Post() {
                     </>
                   ) : (
                     <div>
-                      <p>{FK_Commenter_id}</p>
-                      <p>{Comment}</p>
+                      <p></p>
                       <p>{Comment_Created_at}</p>
+                      <p>
+                        {FK_Commenter_id} : {Comment}
+                      </p>
                     </div>
                   )}
                 </div>
@@ -135,10 +139,15 @@ export default function Post() {
             <div className="post">
               <div className="Cardtop">
                 <p>{Post_Created_at}</p>
-                <p>{likes == null ? 0 : likes}</p>
-                <button className="Edit" onClick={() => setEdit(!edit)}>
-                  Edit
-                </button>
+                <p className="likes-sec">
+                  <img className="like" src={like}></img>
+                  {likes == null ? 0 : likes}
+                </p>
+                <img
+                  src={editIcon}
+                  className="edit-icon"
+                  onClick={() => setEdit(!edit)}
+                ></img>
                 <PostDelete Post_id={Post_id} setPosts={setPosts} />
               </div>
               {edit ? (
@@ -179,9 +188,9 @@ export default function Post() {
             setComments={setComments}
             id={id}
           />
-          <button className="openComment" onClick={() => setIsOpen(!isOpen)}>
-            Comment
-          </button>
+          <div className="openComment" onClick={() => setIsOpen(!isOpen)}>
+            <img className="more-icon" src={more}></img>
+          </div>
           <div>{renderCommment()}</div>
         </div>
       </section>

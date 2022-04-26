@@ -40,7 +40,9 @@ export default function CommentCreate({ comments, setComments, id }) {
           name="content"
           {...register("Comment")}
         />
-        <button type="submit">Post</button>
+        <button className="comment-btn" type="submit">
+          Post
+        </button>
       </div>
     </form>
   );

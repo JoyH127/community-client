@@ -1,6 +1,7 @@
 import axios from "axios";
 import apiUrl from "../../apiConfig";
 import { useNavigate } from "react-router-dom";
+import deleteIcon from "../img/icon/trash.png";
 export default function PostDelete(props) {
   // 2.
   const navigate = useNavigate();
@@ -14,15 +15,14 @@ export default function PostDelete(props) {
 
   // 4.
   return (
-    <button
-      className="del-btn"
+    <img
+      src={deleteIcon}
+      className="del-icon"
       onClick={() => {
         deletePost();
         navigate("/posts");
       }}
-    >
-      Delete
-    </button>
+    ></img>
   );
 }
 
