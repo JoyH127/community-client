@@ -1,70 +1,72 @@
-# Getting Started with Create React App
+# :metal::musical_keyboard:  super-awesome-final-project :guitar::metal:
+Netlify link: https://zingy-sundae-58fa67.netlify.app/
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Heroku link: https://my-artists-api.herokuapp.com/artist
 
-## Available Scripts
+The super-awesome-final-project app, aka Groov-e, is a wikipedia for music. That's it.
 
-In the project directory, you can run:
+P.S. It does full CRUD
 
-### `npm start`
+## Technologies used :computer:
+- Node.js
+- MongoDB/Mongoose
+- Express
+- React
+  
+## Wireframe
+![Screenshot 2022-04-25 155748](https://user-images.githubusercontent.com/97997227/165165540-5a0edda8-80b7-4efc-a1c1-4f850e056329.png)
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+![Screenshot 2022-04-26 160349](https://user-images.githubusercontent.com/97997227/165391672-de56ad57-6810-4679-8f34-37ded9bd6328.png)
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+![Screenshot 2022-04-26 160415](https://user-images.githubusercontent.com/97997227/165391680-58839ad3-473a-411d-a721-71c320d4ce0e.png)
 
-### `npm test`
+## Component Heirarchy
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+![Screenshot 2022-04-26 170058](https://user-images.githubusercontent.com/97997227/165391737-1976242e-1fd2-49eb-8872-c7f4b5b41ba0.png)
 
-### `npm run build`
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+## Dependencies
+#### Backend
+- dotenv
+- nodemon
+- cors
+- morgan
+#### Frontend
+ - react-router-dom
+ - react-bootstrap
+ - axios
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+## Features (MVP)
+- React router
+- Boostrap (a little)
+- Full CRUD operation
 
-### `npm run eject`
+## Upcoming Features(Post MVP)
+- Authorization
+- Concert finder (third party API)
+- Authorization (signup/login)
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+## Endpoints for CRUD
+1. GET  all artist: https://my-artists-api.herokuapp.com/artist
+2. GET  artist by genre: https://my-artists-api.herokuapp.com/artist-genre/:genre
+3. GET  artist by ID: https://my-artists-api.herokuapp.com/artist-genre/:id
+4. POST  Create an artist: https://my-artists-api.herokuapp.com/artist
+5. PUT  Update artist: https://my-artists-api.herokuapp.com/artist/:id
+6. DELETE  artist by ID: https://my-artists-api.herokuapp.com/artist/:id
+7. DELETE  artist by name: https://my-artists-api.herokuapp.com/artistbyname/:name
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+## Schema
+```
+const Artist = new Schema( {
+    name: { type: String, required: true },
+    genre:{type: String, required: true},
+    years_active:{type:String, required: true},
+    members:{type:String, required: false},
+    labels:{type:String, required: false},
+    bio:{type:String, required: false},
+},
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+{timestamps: true},
+)
+```
