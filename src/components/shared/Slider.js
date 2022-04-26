@@ -2,9 +2,8 @@ import { useEffect, useState, useRef } from "react";
 import chain from "../img/gif/chain.gif";
 import education from "../img/gif/education.gif";
 import rock from "../img/gif/rock.gif";
-import info from "../img/icon/information.png";
-import send from "../img/icon/send.png";
-import plus from "../img/icon/plus.png";
+
+import list from "../img/icon/list.png";
 export default function Slider() {
   const colors = ["#0088FE", "#00C49F", "#FFBB28"];
   const imgs = [education, rock, chain];
@@ -39,14 +38,16 @@ export default function Slider() {
   return (
     <div className="whole-slide-container">
       <section className="main-slide-banner">
-        <img className="info-icon" src={info} />
-        <img className="plus-icon" src={plus} />
-        <img className="send-icon" src={send} />
-        <div className="slideshow">
-          <div className="slider-covers">
-            <h3>Today's recommend</h3>
-            <div className="icons"></div>
+        <div className="text-info-banner">
+          <h3>Check the Recommendation</h3>
+          <div className="Recom-list-btn">
+            <img src={list}></img>
+            See the list
           </div>
+        </div>
+
+        <div className="slideshow">
+          <div className="main-slider-covers"></div>
 
           <div
             className="slideshowSlider"

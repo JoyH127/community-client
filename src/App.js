@@ -4,9 +4,7 @@ import Home from "./components/routes/Home";
 import Posts from "./components/routes/Posts";
 import Post from "./components/routes/Post";
 import Login from "./components/shared/Login";
-import { useState } from "react";
 import Register from "./components/shared/Register";
-import Trend from "./components/routes/Trend";
 function App() {
   // const [postsData, setPosts] = useState([]);
   // const get = (postsData) => {
@@ -19,9 +17,9 @@ function App() {
         <NavLink to={"/Login"}>Login</NavLink>
         <NavLink to={"/"}>Logout</NavLink>
       </nav>
-      <nav>
+      <nav className="nav-main">
         <NavLink to={"/"}>Main</NavLink>
-        <NavLink to={"/posts"}>Thread</NavLink>
+        <NavLink to={"/posts"}>Social</NavLink>
       </nav>
       <Routes>
         <Route path="/" element={<Home />} />

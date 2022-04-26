@@ -1,8 +1,11 @@
 import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
-
+import info from "../img/icon/information.png";
+import send from "../img/icon/send.png";
+import plus from "../img/icon/plus.png";
 import axios from "axios";
 import React from "react";
+import close from "../img/icon/cancel.png";
 
 export default function MovieCard({
   title,
@@ -29,18 +32,30 @@ export default function MovieCard({
   const renderPopup = () => {
     return popup ? (
       <>
-        <div className="popup">
-          <div className="popup-inner">
-            <button className="close-btn">close</button>
-            <p>Title:{title}</p>
-            <p>Overview:{overview}</p>
-            <p>Popularity: {popularity}</p>
-            <p>release_date: {release_date}</p>
-            <p>vote_average:{vote_average}</p>
-            <p>vote_count:{vote_count}</p>
-            <img src={imgUrl}></img>
+        <section className="popup">
+          <div className="popup-container">
+            <img className="close-btn" src={close}></img>
+            <div className="popup-inner">
+              <div className="background-contain">
+                <img className="background" src={imgUrl}></img>
+              </div>
+              <div className="popup-text">
+                <h2>{title}</h2>
+                <h4> {release_date}</h4>
+                <hr></hr>
+                <p>
+                  <h3>Overview</h3>
+                  {overview}
+                </p>
+                <div className="small-text">
+                  <p>Popularity : {popularity}</p>
+                  <p>Vote average : {vote_average}</p>
+                  <p>Vote count : {vote_count}</p>
+                </div>
+              </div>
+            </div>
           </div>
-        </div>
+        </section>
       </>
     ) : (
       <></>
@@ -56,9 +71,10 @@ export default function MovieCard({
       }}
     >
       <div>
-        <img src={imgUrl}></img>
+        <img className="card-img" src={imgUrl}></img>
         <div className="cock-cover">
-          <h2>{title}</h2>
+          <h3>{title}</h3>
+          <img className="plus-icon" src={plus}></img>
         </div>
       </div>
       <section>{renderPopup()}</section>

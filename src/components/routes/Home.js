@@ -87,16 +87,20 @@ export default function Home() {
   //   );
   // };
   return (
-    <div>
-      <Slider />
-      <section className="trend-section">
-        <div className="main-slider">
-          <h2>Weekly Movie Trend</h2>
-          <img className="left" src={left} onClick={slideLeft} />
-          <div className="trend-container">{renderTrend()}</div>
-          <img className="right" src={right} onClick={slideRight} />
-        </div>
-      </section>
-    </div>
+    <section id="page-container">
+      <div>
+        <Slider />
+        <section className="trend-section">
+          <div className="main-slider">
+            <div className="main-slider-container">
+              <h2>Weekly Movie Trend</h2>
+              <img className="left" src={left} onClick={slideLeft} />
+              <div className="trend-container">{renderTrend()}</div>
+              <img className="right" src={right} onClick={slideRight} />
+            </div>
+          </div>
+        </section>
+      </div>
+    </section>
   );
 }

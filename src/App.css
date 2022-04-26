@@ -5,7 +5,15 @@ body {
   animation: fadeInAnimation ease 2s;
   animation-iteration-count: 1;
   animation-fill-mode: backwards;
-  background-color: rgb(24, 24, 24);
+  background-color: rgb(0, 0, 0);
+}
+#page-container {
+  background-color: rgb(31, 29, 29);
+  width: 1400px;
+  margin: 0 auto;
+  border-radius: 3%;
+
+  /* border: 1px solid rgb(255, 255, 255); */
 }
 @keyframes fadeInAnimation {
   0% {
@@ -16,23 +24,33 @@ body {
   }
 }
 .nav-login {
-  border: 1px solid rgb(255, 255, 255);
+  /* border: 1px solid rgb(255, 255, 255); */
   text-align: right;
   padding: 10px;
   font-size: 15px;
+  background-color: black;
 }
 
-nav {
-  border: 1px solid rgb(255, 255, 255);
+.nav-main {
+  /* border: 1px solid rgb(255, 255, 255); */
   text-align: center;
   padding: 10px;
   font-size: 20px;
+  margin: 10px 0px 20px 0px;
+  width: 100%;
 }
 
 nav a {
   padding: 20px;
   text-decoration: none;
   color: rgb(255, 255, 255);
+}
+.nav-main a:hover {
+  background-color: #575757;
+  border-radius: 3%;
+  transform: scaleX(1);
+  transform-origin: left;
+  transition: 0.3s;
 }
 .createPost {
   border: 1px solid rgb(255, 255, 255);
@@ -94,6 +112,7 @@ nav a {
   width: 318px;
   height: 50px;
   margin-right: 20px;
+  color: black;
 }
 
 .input-user input {
@@ -161,7 +180,10 @@ nav a {
   display: flex;
   justify-content: center;
   width: 100%;
-  border: 1px solid rgb(255, 0, 0);
+  /* border: 1px solid rgb(255, 0, 0); */
+  animation: fadeInAnimation ease 0.4s;
+  animation-iteration-count: 1;
+  animation-fill-mode: backwards;
 }
 .slideshow {
   position: relative;
@@ -169,6 +191,9 @@ nav a {
   overflow: hidden;
   width: 700px;
   border-radius: 10px;
+  animation: fadeInAnimation ease 2s;
+  animation-iteration-count: 1;
+  animation-fill-mode: backwards;
 }
 .slideshow img {
   height: 100%;
@@ -177,21 +202,50 @@ nav a {
 }
 .main-slide-banner {
   position: relative;
-  border: 1px solid rgb(27, 179, 206);
+  /* border: 1px solid rgb(27, 179, 206); */
   height: 400px;
   width: 700px;
 }
 
-.slider-covers {
+.main-slider-covers {
+  background: linear-gradient(
+    360deg,
+    rgba(0, 0, 0, 0.916) 0%,
+    rgba(0, 0, 0, 0.157) 49%
+  );
   position: absolute;
   z-index: 10;
   display: flex;
-  justify-content: center;
   height: 400px;
   width: 700px;
-  border: 1px solid rgb(255, 255, 255);
+  /* border: 1px solid rgb(255, 255, 255); */
 }
 
+.text-info-banner h3 {
+  z-index: 40;
+  position: absolute;
+  bottom: 90px;
+  left: 40px;
+}
+.Recom-list-btn {
+  border-radius: 3%;
+  border: 0px;
+  position: absolute;
+  left: 40px;
+  z-index: 20;
+  bottom: 60px;
+  padding: 5px 40px 5px 40px;
+  background-color: rgba(255, 255, 255, 0.191);
+}
+
+.Recom-list-btn img {
+  position: absolute;
+  left: 10px;
+  width: 20px;
+  height: 20px;
+  filter: invert(1);
+  padding-right: 20px;
+}
 .slideshowSlider {
   white-space: nowrap;
   transition: ease 1000ms;
@@ -209,7 +263,7 @@ nav a {
 
 .info-icon {
   position: absolute;
-  z-index: 30;
+  z-index: 40;
   height: 30px;
   width: 30px;
   filter: invert(1);
@@ -235,8 +289,8 @@ nav a {
   right: 30px;
   bottom: 35px;
 }
-/* Buttons */
 
+/* Slider- Buttons */
 .slideshowDots {
   text-align: center;
 }
@@ -289,22 +343,16 @@ nav a {
   text-align: center;
 }
 .card {
+  position: relative;
   margin: 0 auto;
-  margin-left: 20px;
+  margin-left: 10px;
   padding-bottom: 0px;
-  border-radius: 10px;
-  border: 1px solid rgb(255, 255, 255);
+  /* border-radius: 10px;
+  border: 1px solid rgb(251, 102, 102); */
   text-align: center;
 }
 .card:hover {
-  position: relative;
-  background-color: rgba(252, 252, 252, 0.782);
-  margin: 0 auto;
-  margin-left: 20px;
-  padding-bottom: 20px;
-  border-radius: 10px;
   transition: 0.5s;
-  scale: 1.05;
 }
 .trend-container {
   display: flex;
@@ -315,30 +363,33 @@ nav a {
   scroll-behavior: smooth;
 }
 .main-slider {
-  margin: 0 auto;
-  width: 1500px;
   position: relative;
   margin-bottom: 45px;
   transition: 0.5s;
   padding-top: 50px;
+
+  display: flex;
+  justify-content: center;
 }
 .left,
 .right {
   position: absolute;
-  z-index: 4px;
+  z-index: 4;
   width: 30px;
   filter: invert(1);
 }
 .left {
-  left: 150px;
+  left: 50px;
   top: 50%;
 }
 .right {
-  right: 140px;
+  right: 50px;
   top: 50%;
 }
-
-.card img {
+.main-slider-container {
+  margin: 10px 0px 100px 0;
+}
+.card .card-img {
   position: relative;
   margin: 20px 20px 10px 20px;
   width: 300px;
@@ -346,42 +397,111 @@ nav a {
   border-radius: 5%;
   overflow: hidden;
 }
+
+.card .card-img:hover {
+  scale: 1.1;
+  transition: 0.4s;
+}
 .card button {
   display: block;
   margin: 0 auto;
 }
-
-.card h2 {
-  border: 1px solid rgb(255, 255, 255);
+.cock-cover {
+  display: none;
+  position: absolute;
+  top: 90%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 50;
+  border: 1px solid rgb(43, 181, 30);
 }
+
 /* ---------------------TREND POPUP */
 .popup {
   position: fixed;
   top: 0;
   left: 0;
+  height: 100%;
   width: 100%;
-
-  background-color: rgba(0, 0, 0, 0.539);
+  background-color: rgba(0, 0, 0, 0.652);
   display: flex;
   justify-content: center;
   align-items: center;
-  z-index: 100;
+  z-index: 1000;
+  animation: fadeInAnimation ease 0.4s;
+  animation-iteration-count: 1;
+  animation-fill-mode: backwards;
+}
+.popup-container {
+  /* border: 1px solid rgb(255, 2, 175); */
+  position: relative;
+  border-radius: 2%;
+  overflow: hidden;
+  width: 1000px;
 }
 
 .popup-inner {
-  position: relative;
-  padding: 32px;
   width: 100%;
   max-width: 1000px;
   height: 100%;
   background-color: rgb(31, 31, 31);
-}
-.popup-inner img {
-  height: 100%;
-}
+  animation: fadeInAnimation ease 0.4s;
+  animation-iteration-count: 1;
+  animation-fill-mode: backwards;
 
-.popup-inner .close-btn {
+  /* border: 1px solid rgb(228, 3, 3); */
+}
+.background-contain {
+  width: 100%;
+  height: 700px;
+  overflow: hidden;
+  /* border: 1px solid rgb(0, 119, 165); */
+}
+.background {
+  width: 100%;
+  filter: blur(4px);
+}
+.background-cover {
   position: absolute;
-  top: 16px;
-  right: 16px;
+  z-index: 10;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    0deg,
+    rgba(71, 68, 65, 1) 0%,
+    rgba(58, 56, 54, 0.9948179955575981) 62%,
+    rgba(37, 37, 37, 0.33655469023546913) 100%
+  );
+}
+.popup-text {
+  line-height: 1.4;
+  position: absolute;
+  padding: 400px 40px 50px 40px;
+  bottom: 0px;
+  background: linear-gradient(
+    0deg,
+    rgba(7, 7, 7, 0.975) 30%,
+    rgba(18, 17, 17, 0.679) 50%,
+    rgba(31, 29, 29, 0.055) 100%
+  );
+  text-align: left;
+}
+.popup-text h2 {
+  font-size: 40px;
+}
+.popup-text h4 {
+  right: 40px;
+  position: absolute;
+}
+.small-text {
+  padding-top: 10px;
+}
+.popup .close-btn {
+  filter: invert(1);
+  width: 25px;
+  height: 25px;
+  z-index: 100;
+  top: 20px;
+  position: absolute;
+  right: 20px;
 }
