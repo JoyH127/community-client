@@ -1,64 +1,107 @@
-import { useEffect, useState, useRef } from "react";
+import { useEffect, useState } from "react";
 import axios from "axios";
-import apiUrl from "../../apiConfig";
-import chain from "../img/gif/chain.gif";
-import education from "../img/gif/education.gif";
-
-import rock from "../img/gif/rock.gif";
+import Slider from "../shared/Slider";
+// import env from "react-dotenv";
+import MovieCard from "./MovieCard";
+import React from "react";
+import left from "../img/icon/next.png";
+import right from "../img/icon/right.png";
+import Trend from "./Trend";
+import { useParams } from "react-router-dom";
+const URL = "https://api.themoviedb.org/3/trending/movie/week?api_key=";
+const API_KEY = "364efc32f3d781a4ef5b975d2e25f1f7";
 export default function Home() {
-  const colors = ["#0088FE", "#00C49F", "#FFBB28"];
-  const imgs = [education, rock, chain];
-  const delay = 5000;
-  const [index, setIndex] = useState(0);
-  const timeoutRef = useRef(null);
-  function resetTimeout() {
-    if (timeoutRef.current) {
-      clearTimeout(timeoutRef.current);
-    }
-  }
-  useEffect(() => {
-    resetTimeout();
-    timeoutRef.current = setTimeout(
-      () =>
-        setIndex((prevIndex) =>
-          prevIndex === colors.length - 1 ? 0 : prevIndex + 1
-        ),
-      delay
-    );
+  const id = useParams();
+  // const [popup, setPopup] = useState(true);
+  const [trends, setTrend] = useState([]);
 
-    return () => {
-      resetTimeout();
-    };
-  }, [index]);
-  const fetchImg = () => {
-    return imgs.map((img, index) => {
-      return img[index];
+  const fetchTrend = async () => {
+    try {
+      const response = await axios(`${URL}${API_KEY}`);
+
+      setTrend(response.data.results);
+    } catch (error) {
+      console.log(error);
+    }
+  };
+
+  useEffect(() => {
+    fetchTrend();
+  }, []);
+
+  const slideRight = () => {
+    let slide = document.querySelector(".trend-container");
+    slide.scrollLeft = slide.scrollLeft + 700;
+  };
+  const slideLeft = () => {
+    let slide = document.querySelector(".trend-container");
+    slide.scrollLeft = slide.scrollLeft - 700;
+  };
+
+  // const handlePopup = () => {
+  //   setPopup(!popup);
+  // };
+  console.log("trend", trends);
+  const renderTrend = () => {
+    return trends.map((trend, index) => {
+      const {
+        title,
+        overview,
+        poster_path,
+        id,
+        popularity,
+        release_date,
+        backdrop_path,
+        vote_count,
+        vote_average,
+      } = trend;
+      return (
+        <MovieCard
+          title={title}
+          overview={overview}
+          poster_path={poster_path}
+          id={id}
+          popularity={popularity}
+          release_date={release_date}
+          backdrop_path={backdrop_path}
+          vote_average={vote_average}
+          vote_count={vote_count}
+        />
+      );
     });
   };
-  return (
-    <div className="slideshow">
-      <div
-        className="slideshowSlider"
-        style={{ transform: `translate3d(${-index * 100}%, 0, 0)` }}
-      >
-        {imgs.map((item, index) => (
-          <div className="slide" key={index}>
-            <img src={item}></img>
-          </div>
-        ))}
-      </div>
 
-      <div className="slideshowDots">
-        {colors.map((_, idx) => (
-          <div
-            key={idx}
-            className={`slideshowDot${index === idx ? " active" : ""}`}
-            onClick={() => {
-              setIndex(idx);
-            }}
-          ></div>
-        ))}
-      </div>
+  // const PopupRender = () => {
+  //   return popup ? (
+  //     <>
+  //       <div className="popup">
+  //         <div className="popup-inner">
+  //           <button
+  //             className="close-btn"
+  //             onClick={() => {
+  //               handlePopup();
+  //             }}
+  //           >
+  //             close
+  //           </button>
+  //         </div>
+  //       </div>
+  //     </>
+  //   ) : (
+  //     ""
+  //   );
+  // };
+  return (
+    <div>
+      <Slider />
+      <section>
+        <h2>Weekly Movie Trend</h2>
+        <div className="main-slider">
+          <img className="left" src={left} onClick={slideLeft} />
+          <div className="trend-container">{renderTrend()}</div>
+          <img className="right" src={right} onClick={slideRight} />
+        </div>
+      </section>
     </div>
   );
 }

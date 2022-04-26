@@ -129,8 +129,7 @@ nav a {
   width: 100%;
 }
 .comment-content {
-  height: 0;
-  transition: height ease 0.3s;
+  height: 0px;
   animation: fadeInAnimation ease 2s;
   animation-iteration-count: 1;
   animation-fill-mode: backwards;
@@ -138,6 +137,7 @@ nav a {
 
 .comment-content.show {
   height: 100%;
+  transition: height ease 0.3s;
   animation: fadeInAnimation ease 2s;
   animation-iteration-count: 1;
   animation-fill-mode: backwards;
@@ -156,13 +156,13 @@ nav a {
 .slideshow {
   margin: 0 auto;
   overflow: hidden;
-  max-width: 350px;
+  max-width: 700px;
   border-radius: 10px;
 }
 .slideshow img {
   height: 100%;
   position: absolute;
-  right: -170px;
+  right: -10px;
 }
 
 .slideshowSlider {
@@ -227,4 +227,103 @@ nav a {
   justify-content: center;
   width: 80%;
   border: 1px solid #000;
+}
+
+/* Movie Slider */
+
+.card {
+  margin: 0 auto;
+  margin-left: 20px;
+  padding-bottom: 0px;
+  border-radius: 10px;
+  border: 1px solid #000;
+  text-align: center;
+}
+.card:hover {
+  background-color: rgba(252, 252, 252, 0.782);
+  margin: 0 auto;
+  margin-left: 20px;
+  padding-bottom: 20px;
+  border-radius: 10px;
+  transition: 0.5s;
+}
+.trend-container {
+  display: flex;
+  width: 1100px;
+  margin: 0 auto;
+  /* flex-wrap: wrap;
+    flex-direction: row; */
+  overflow-x: scroll;
+  scrollbar-width: none;
+  scroll-behavior: smooth;
+}
+.main-slider {
+  margin: 0 auto;
+  width: 1500px;
+  position: relative;
+  margin-bottom: 45px;
+  transition: 0.5s;
+}
+.left,
+.right {
+  position: absolute;
+  z-index: 4px;
+  width: 30px;
+}
+.left {
+  left: 150px;
+  top: 170px;
+}
+.right {
+  right: 140px;
+  top: 170px;
+}
+
+.card img {
+  position: relative;
+  margin: 20px 20px 10px 20px;
+  width: 300px;
+  height: 100%;
+  border-radius: 5%;
+  overflow: hidden;
+}
+.card button {
+  display: block;
+  margin: 0 auto;
+}
+
+.card h2 {
+  color: #000;
+  border: 1px solid #000;
+}
+/* ---------------------TREND POPUP */
+.popup {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+
+  background-color: rgba(0, 0, 0, 0.641);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 100;
+}
+
+.popup-inner {
+  position: relative;
+  padding: 32px;
+  width: 100%;
+  max-width: 1000px;
+  height: 100%;
+  background-color: white;
+}
+.popup-inner img {
+  height: 100%;
+}
+
+.popup-inner .close-btn {
+  position: absolute;
+  top: 16px;
+  right: 16px;
 }
