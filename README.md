@@ -5,6 +5,13 @@ Netlify link: https://unrivaled-bombolone-432644.netlify.app/
 Heroku link: https://netflix-community-app.herokuapp.com/
 
 
+# The Project..
+
+The initial concept of the project is the combination with social media and streaming service. 
+The social media app for streaming service will provide weekly brand new movie information and a Social page to talk about the contents. 
+
+# Targeted user
+ The targeted customers can be any range of age and race who uses streaming servicce.
 
 ## Technologies used :computer:
 - Node.js
@@ -37,12 +44,14 @@ Heroku link: https://netflix-community-app.herokuapp.com/
  - react-router-dom
  - react-hook-form
  - axios
-
+#### API 
+- The MovieDB
+https://www.themoviedb.org/
 
 ## Features (MVP)
 - React router
 - Full CRUD operation for (Posts,Comment)
-
+- READ weekly trend movie info
 
 ## Upcoming Features(Post MVP)
 - Authorization (signup/login)
