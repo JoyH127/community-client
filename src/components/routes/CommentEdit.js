@@ -22,7 +22,7 @@ export default function CommentEdit(props) {
       .put(`${apiUrl}/comments/${props.Comment_id}`, CommentData)
       .then(() => {
         props.setComments([props, { CommentData }]);
-        // window.location.reload();
+        window.location.reload();
       });
   };
 

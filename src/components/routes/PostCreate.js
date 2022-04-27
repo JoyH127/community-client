@@ -12,7 +12,7 @@ export default function PostCreate(props) {
   const addPost = (data) => {
     axios.post(`${apiUrl}/posts`, data).then(() => {
       props.setPosts([...props.posts, { data }]);
-      // window.location.reload();
+      window.location.reload();
     });
   };
 

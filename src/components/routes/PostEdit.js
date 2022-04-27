@@ -24,7 +24,7 @@ export default function PostEdit(props) {
   const UpdatePost = (updateData) => {
     axios.put(`${apiUrl}/posts/${props.Post_id}`, updateData).then(() => {
       props.setPosts([props, { updateData }]);
-      // window.location.reload();
+      window.location.reload();
     });
   };
 

@@ -8,7 +8,7 @@ export default function CommentDelete(props) {
     axios.delete(`${apiUrl}/comments/${props.Comment_id}`).then((res) => {
       //  get deleted response data into set post.
       props.setComments(res.data);
-      // window.location.reload();
+      window.location.reload();
     });
   };
 
