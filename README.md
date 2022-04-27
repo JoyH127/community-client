@@ -1,4 +1,5 @@
-# :metal::musical_keyboard:  super-awesome-final-project :guitar::metal:
+#  Streaming for Social media
+
 Netlify link: https://zingy-sundae-58fa67.netlify.app/
 
 Heroku link: https://my-artists-api.herokuapp.com/artist
@@ -14,13 +15,16 @@ P.S. It does full CRUD
 - React
   
 ## Wireframe
-![Screenshot 2022-04-25 155748](https://user-images.githubusercontent.com/97997227/165165540-5a0edda8-80b7-4efc-a1c1-4f850e056329.png)
+![Main(1)](https://user-images.githubusercontent.com/97911806/165415908-55cc9a58-88f8-4e4d-91d9-7c9d31fae1f4.png)
+<br />
+![Main-Popup detail](https://user-images.githubusercontent.com/97911806/165415923-adbaf9c7-425e-4c61-a992-c5220267c67b.png)
+![Social Page](https://user-images.githubusercontent.com/97911806/165415964-fd837b0e-da0f-4a8c-95b6-084be55781ae.png)
+![Post](https://user-images.githubusercontent.com/97911806/165415976-a3cb84da-44b0-45c9-b11b-c7e0db6fcda1.png)
 
-![Screenshot 2022-04-26 160349](https://user-images.githubusercontent.com/97997227/165391672-de56ad57-6810-4679-8f34-37ded9bd6328.png)
 
-![Screenshot 2022-04-26 160415](https://user-images.githubusercontent.com/97997227/165391680-58839ad3-473a-411d-a721-71c320d4ce0e.png)
 
-## Component Heirarchy
+## Component Heirarchy![Uploading Social Page.png…]()
+
 
 ![Screenshot 2022-04-26 170058](https://user-images.githubusercontent.com/97997227/165391737-1976242e-1fd2-49eb-8872-c7f4b5b41ba0.png)
 
