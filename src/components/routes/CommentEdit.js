@@ -37,7 +37,9 @@ export default function CommentEdit(props) {
             {...register("Comment")}
           />
         </span>
-        <button type="submit">Post</button>
+        <button className="post-edit-btn" type="submit">
+          Post
+        </button>
       </div>
     </form>
   );

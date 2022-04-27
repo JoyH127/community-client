@@ -29,33 +29,37 @@ export default function PostEdit(props) {
   };
 
   return (
-    <form onSubmit={handleSubmit(Submit)}>
-      <div className="input-top">
-        <span className="input-user">
+    <section>
+      <form onSubmit={handleSubmit(Submit)}>
+        <div className="input-top">
+          <span className="input-user">
+            <input
+              placeholder="user"
+              defaultValue={props.FK_User_id}
+              {...register("FK_User_id")}
+            />
+          </span>
+        </div>
+        <div className="input-content">
+          <span className="input-title">
+            <input
+              placeholder="title"
+              defaultValue={props.Post_title}
+              name="title"
+              {...register("Post_title")}
+            />
+          </span>
           <input
-            placeholder="user"
-            defaultValue={props.FK_User_id}
-            {...register("FK_User_id")}
+            placeholder="Content.."
+            name="content"
+            defaultValue={props.Post_content}
+            {...register("Post_content")}
           />
-        </span>
-      </div>
-      <div className="input-content">
-        <span className="input-title">
-          <input
-            placeholder="title"
-            defaultValue={props.Post_title}
-            name="title"
-            {...register("Post_title")}
-          />
-        </span>
-        <input
-          placeholder="Content.."
-          name="content"
-          defaultValue={props.Post_content}
-          {...register("Post_content")}
-        />
-        <button type="submit">Post</button>
-      </div>
-    </form>
+          <button className="post-edit-btn" type="submit">
+            Post
+          </button>
+        </div>
+      </form>
+    </section>
   );
 }

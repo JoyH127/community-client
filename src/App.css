@@ -89,6 +89,14 @@ nav a {
   margin-left: 337px;
   cursor: pointer;
 }
+
+.createPost button:hover {
+  background-color: #6b6b6b;
+  border: 0px solid #ffffff;
+  border-radius: 3%;
+  transition: 0.4s;
+}
+
 .postContainer {
   display: flex;
   justify-content: center;
@@ -210,6 +218,21 @@ nav a {
 
 .post-post-input .input-content {
   width: 400px;
+}
+.post-edit-btn {
+  position: relative;
+  background-color: #0d0d0d;
+  padding: 10px 20px 10px 20px;
+  border: 0px solid #ffffff;
+  border-radius: 3%;
+  cursor: pointer;
+}
+
+.post-edit-btn:hover {
+  background-color: #6b6b6b;
+  border: 0px solid #ffffff;
+  border-radius: 3%;
+  transition: 0.4s;
 }
 
 /* ----------------- POST PAGE */
@@ -397,7 +420,6 @@ nav a {
   height: 10px;
   width: 10px;
   border-radius: 50%;
-
   cursor: pointer;
   margin: 15px 7px 0px;
 
