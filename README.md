@@ -41,33 +41,71 @@ Heroku link: https://netflix-community-app.herokuapp.com/
 
 ## Features (MVP)
 - React router
-- Boostrap (a little)
-- Full CRUD operation
+- Full CRUD operation for (Posts,Comment)
+
 
 ## Upcoming Features(Post MVP)
 - Authorization (signup/login)
 - Personal Feed (including My list, Review, Channel,Friend 
 
 ## Endpoints for CRUD
-1. GET  all artist: https://my-artists-api.herokuapp.com/artist
-2. GET  artist by genre: https://my-artists-api.herokuapp.com/artist-genre/:genre
-3. GET  artist by ID: https://my-artists-api.herokuapp.com/artist-genre/:id
-4. POST  Create an artist: https://my-artists-api.herokuapp.com/artist
-5. PUT  Update artist: https://my-artists-api.herokuapp.com/artist/:id
-6. DELETE  artist by ID: https://my-artists-api.herokuapp.com/artist/:id
-7. DELETE  artist by name: https://my-artists-api.herokuapp.com/artistbyname/:name
+1. GET  all users: https://netflix-community-app.herokuapp.com/users
+2. GET  all posts: https://netflix-community-app.herokuapp.com/posts
+3. GET  all comments: https://netflix-community-app.herokuapp.com/comments
+4. POST a new user : https://netflix-community-app.herokuapp.com/users
+5. POST a new post: https://netflix-community-app.herokuapp.com/posts
+6. POST a new comment: https://netflix-community-app.herokuapp.com/comments
+7. PUT  Update a user: https://netflix-community-app.herokuapp.com/users:id
+8. PUT  Update a post: https://netflix-community-app.herokuapp.com/posts:id
+9. PUT  Update a comment: https://netflix-community-app.herokuapp.com/comments:id
+10. DELETE  Update a user: https://netflix-community-app.herokuapp.com/users:id
+11. DELETE  Update a post: https://netflix-community-app.herokuapp.com/posts:id
+12. DELETE  Update a comment: https://netflix-community-app.herokuapp.com/comments:id
 
-## Schema
+
+## Schema for Sql
 ```
-const Artist = new Schema( {
-    name: { type: String, required: true },
-    genre:{type: String, required: true},
-    years_active:{type:String, required: true},
-    members:{type:String, required: false},
-    labels:{type:String, required: false},
-    bio:{type:String, required: false},
-},
+CREATE TABLE Users(
+User_id INT(10) PRIMARY KEY AUTO_INCREMENT,
+User_name VARCHAR(20) NOT NULL, 
+User_email VARCHAR(255) NOT NULL UNIQUE,
+User_created_at DATETIME NOT NULL Default now()
+);
 
-{timestamps: true},
-)
+
+CREATE TABLE Posts(
+Post_id INT(10) PRIMARY KEY AUTO_INCREMENT,
+FK_User_id INT(10) NOT NULL,
+Post_title VARCHAR(100) NOT NULL,
+likes INT NULL,
+Post_content TEXT NOT NULL,
+Post_img LONGBLOB NULL,
+Post_Created_at DATETIME NOT NULL Default now()
+);
+
+
+CREATE TABLE Comments(
+Comment_id INT(10) PRIMARY KEY AUTO_INCREMENT, 
+FK_Commenter_id INT(10) NOT NULL,
+FK_Post_id INT(10) NOT NULL,
+Comment VARCHAR(100) NOT NULL,
+Comment_Created_at DATETIME NOT NULL Default now()
+);
+
+// add foreign key
+ALTER TABLE Comments ADD CONSTRAINT FK_Commenter_id FOREIGN KEY (FK_Commenter_id) REFERENCES Users(User_id);
+ALTER TABLE Comments ADD CONSTRAINT FK_Post_id FOREIGN KEY (FK_Post_id) REFERENCES Posts(Post_id);
+
+ALTER TABLE Comments ADD CONSTRAINT FK_Commenter_id FOREIGN KEY (FK_Commenter_id) REFERENCES Users(User_id);
+ALTER TABLE Comments ADD CONSTRAINT FK_Post_id FOREIGN KEY (FK_Post_id) REFERENCES Posts(Post_id);
+
+
+// How to change FK 
+SET foreign_key_checks = 0;
+UPDATE comments SET FK_Commenter_id=34 WHERE Comment_id=34;
+UPDATE comments SET FK_Commenter_id=44 WHERE Comment_id=24;
+UPDATE comments SET FK_Post_id = 104  WHERE Comment_id=24;
+UPDATE comments SET FK_Post_id = 114  WHERE Comment_id=34;
+SET foreign_key_checks = 1;
+
 ```
