@@ -35,7 +35,7 @@ Heroku link: https://netflix-community-app.herokuapp.com/
 - morgan
 #### Frontend
  - react-router-dom
- - react-bootstrap
+ - react-hook-form
  - axios
 
 
@@ -45,9 +45,8 @@ Heroku link: https://netflix-community-app.herokuapp.com/
 - Full CRUD operation
 
 ## Upcoming Features(Post MVP)
-- Authorization
-- Concert finder (third party API)
 - Authorization (signup/login)
+- Personal Feed (including My list, Review, Channel,Friend 
 
 ## Endpoints for CRUD
 1. GET  all artist: https://my-artists-api.herokuapp.com/artist
