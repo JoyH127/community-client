@@ -1,16 +1,14 @@
 #  Streaming for Social media
 
-Netlify link: https://zingy-sundae-58fa67.netlify.app/
+Netlify link: https://unrivaled-bombolone-432644.netlify.app/
 
-Heroku link: https://my-artists-api.herokuapp.com/artist
+Heroku link: https://netflix-community-app.herokuapp.com/
 
-The super-awesome-final-project app, aka Groov-e, is a wikipedia for music. That's it.
 
-P.S. It does full CRUD
 
 ## Technologies used :computer:
 - Node.js
-- MongoDB/Mongoose
+- Mysql
 - Express
 - React
   
