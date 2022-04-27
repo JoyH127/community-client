@@ -9,7 +9,7 @@ export default function PostDelete(props) {
     axios.delete(`${apiUrl}/posts/${props.Post_id}`).then((res) => {
       // 3. get deleted response data into set post.
       props.setPosts(res.data);
-      window.location.reload();
+      // window.location.reload();
     });
   };
 

@@ -234,6 +234,12 @@ nav a {
   border-radius: 3%;
   transition: 0.4s;
 }
+.comment-btn:hover {
+  background-color: #6b6b6b;
+
+  border-radius: 3%;
+  transition: 0.4s;
+}
 
 /* ----------------- POST PAGE */
 .post-post {
