@@ -31,10 +31,16 @@ The social media app for streaming service will provide weekly brand new movie i
 ![sql diagram drawio(1)](https://user-images.githubusercontent.com/97911806/165426252-82ae594f-f35b-43d1-b0d6-14a6186b288f.png)
 
 
-## Component Heirarchy![Uploading Social Page.png…]()
+## Component Heirarchy
+
+```
+APP        
+Home\\ Posts\\ Login Register
+Slider MovieCard \\ PostCard PostCreate \\ Post
+Comment, CommentCreate CommentDelete, CommentEdit, PostDelete, PostEdit
 
 
-![Screenshot 2022-04-26 170058](https://user-images.githubusercontent.com/97997227/165391737-1976242e-1fd2-49eb-8872-c7f4b5b41ba0.png)
+```
 
 
 ## Dependencies
