@@ -26,6 +26,9 @@ The social media app for streaming service will provide weekly brand new movie i
 ![Social Page](https://user-images.githubusercontent.com/97911806/165415964-fd837b0e-da0f-4a8c-95b6-084be55781ae.png)
 ![Post](https://user-images.githubusercontent.com/97911806/165415976-a3cb84da-44b0-45c9-b11b-c7e0db6fcda1.png)
 
+## sql diagram 
+
+![sql diagram drawio(1)](https://user-images.githubusercontent.com/97911806/165426252-82ae594f-f35b-43d1-b0d6-14a6186b288f.png)
 
 
 ## Component Heirarchy![Uploading Social Page.png…]()
