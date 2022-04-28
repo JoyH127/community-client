@@ -1,6 +1,6 @@
 #  Streaming for Social media
 
-Netlify link: 
+Netlify link: https://unrivaled-bombolone-432644.netlify.app
 
 Heroku link: https://netflix-community-app.herokuapp.com/
 
