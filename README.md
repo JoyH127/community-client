@@ -1,4 +1,4 @@
-# Social media for Streaming service
+#  Community website for Streaming service
 
 Netlify link: https://unrivaled-bombolone-432644.netlify.app
 
@@ -8,7 +8,7 @@ Heroku link: https://netflix-community-app.herokuapp.com/
 ## The Project..
 
 The initial concept of the project is the combination with social media and streaming service. 
-The social media app for streaming service will provide weekly brand new movie information and a Social page to talk about the contents. 
+The community website for streaming service will provide weekly brand new movie information and a Social page to talk about the contents. 
 
 ## Targeted user
  The targeted customers can be any range of age and race who uses streaming servicce.
