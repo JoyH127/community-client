@@ -1,4 +1,4 @@
-#  Streaming for Social media
+# Social media for Streaming service
 
 Netlify link: https://unrivaled-bombolone-432644.netlify.app
 
